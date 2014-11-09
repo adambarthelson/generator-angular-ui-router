@@ -4,13 +4,14 @@
   angular.module('<%= _.camelize(appname) %>App', [<%= angularModules %>])
   .config(function ($stateProvider, $urlRouterProvider) {
     //delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('index', {
         url: '/',
         templateUrl: 'views/main.html',
         controller:'MainCtrl'
       })
+      // ui-otherwise
+    $urlRouterProvider.otherwise('/');
   })
 <% }else{ %>
   angular.module('<%= _.camelize(appname) %>App', [<%= angularModules %>])
